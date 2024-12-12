@@ -16,6 +16,7 @@ again.addEventListener('click', function (e) {
   number.textContent = '?';
   message.textContent = ' Start guessing...';
   score.textContent = 0;
+  randomNumber = Number(Math.trunc(Math.random() * 20 + 1));
 });
 
 let numClick = 0;
@@ -36,5 +37,11 @@ check.addEventListener('click', function (e) {
     if (Number(highScore.textContent) < Number(numClick)) {
       highScore.textContent = numClick;
     }
+  }
+});
+
+input.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    check.click();
   }
 });
